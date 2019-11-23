@@ -1,0 +1,16 @@
+# Ignore autotools noise
+.libs/
+config.h
+config.h.in
+config.log
+config.status
+libxdelta3.la
+libxdelta3_la-xdelta3.lo
+libxdelta3_la-xdelta3.o
+xdelta3-config.h
+Makefile.in
+
+*.in
+
+*.lo
+*.o
