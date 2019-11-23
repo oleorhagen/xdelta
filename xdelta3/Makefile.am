@@ -7,6 +7,7 @@ lib_LTLIBRARIES = libxdelta3.la
 
 libxdelta3_la_SOURCES = \
     xdelta3.c \
+		xdelta3-main.h \
     xdelta3-blkcache.h \
     xdelta3-decode.h \
     xdelta3-djw.h \
@@ -23,6 +24,9 @@ WFLAGS = -Wall -Wshadow -fno-builtin -Wextra -Wsign-compare -Wextra \
 libxdelta3_la_CFLAGS = $(WFLAGS) -pedantic -std=c99
 
 libxdelta3_la_CFLAGS += "-DSECONDARY_DJW=1"
+
+# Do not generate main, but rather 'xd3_main_cmdline'
+libxdelta3_la_CPPFLAGS = -DNOT_MAIN
 
 if HAVE_LZMA
     libxdelta3_la_CFLAGS += -DSECONDARY_LZMA=1
